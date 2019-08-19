@@ -4,22 +4,22 @@ public class BackstageItem implements RoseUpdater {
 
     @Override
     public void updateQuality(Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
+        if (item.getQuality() < MAX_QUALITY) {
+            item.setQuality(item.getQuality() + 1);
         }
 
-        if (item.sellIn < 11 && item.quality < 50) {
-            item.quality = item.quality + 1;
+        if (item.getSellIn() < MAX_SELLIN && item.getQuality() < MAX_QUALITY) {
+            item.setQuality(item.getQuality() + 1);
         }
 
-        if (item.sellIn < 6 && item.quality < 50) {
-            item.quality = item.quality + 1;
+        if (item.getSellIn() < SECOND_MAX_SELLIN && item.getQuality() < MAX_QUALITY) {
+            item.setQuality(item.getQuality() + 1);
         }
 
-        item.sellIn = item.sellIn - 1;
+        item.setSellIn(item.getSellIn() - 1);
 
-        if (item.sellIn < 0) {
-            item.quality = 0;
+        if (item.getSellIn() < MIN_SELLIN) {
+            item.setQuality(0);
         }
     }
 }

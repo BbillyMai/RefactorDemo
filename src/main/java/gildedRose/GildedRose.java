@@ -2,7 +2,7 @@ package gildedRose;
 
 public class GildedRose {
 
-    Item[] items;
+    private Item[] items;
 
     public GildedRose(Item[] items) {
         this.items = items;
@@ -13,4 +13,5 @@ public class GildedRose {
             items[i].updateQuality();
         }
     }
+
 }
