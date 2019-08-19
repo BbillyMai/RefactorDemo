@@ -1,7 +1,6 @@
 package gildedRose;
 
 public class Item {
-
     private String name;
 
     private int sellIn;
@@ -26,10 +25,6 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public int getSellIn() {
         return sellIn;
     }
@@ -38,11 +33,19 @@ public class Item {
         return quality;
     }
 
-    public void setSellIn(int sellIn) {
-        this.sellIn = sellIn;
+    public void increaseQuality() {
+        quality++;
     }
 
-    public void setQuality(int quality) {
-        this.quality = quality;
+    public void decreaseQuality() {
+        quality--;
+    }
+
+    public void decreaseSellIn() {
+        sellIn--;
+    }
+
+    public void setQualityZero() {
+        quality = 0;
     }
 }

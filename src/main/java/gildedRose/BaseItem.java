@@ -5,11 +5,11 @@ public class BaseItem implements RoseUpdater {
     @Override
     public void updateQuality(Item item) {
         if (item.getQuality() > MIN_QUALITY) {
-            item.setQuality(item.getQuality() - 1);
+            item.decreaseQuality();
         }
-        item.setSellIn(item.getSellIn() - 1);
+        item.decreaseSellIn();
         if (item.getSellIn() < MIN_SELLIN && item.getQuality() > MIN_QUALITY) {
-            item.setQuality(item.getQuality() - 1);
+            item.decreaseQuality();
         }
     }
 
