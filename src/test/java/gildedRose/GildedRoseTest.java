@@ -174,4 +174,27 @@ public class GildedRoseTest {
         assertEquals(50, items[0].quality);
         assertEquals(0, items[0].sellIn);
     }
+
+    @Test
+    public void when_updateQuality_given_item_name_is_SULFURAS_and_quality_is_48_and_sell_is_Minus_one() {
+        Item[] items = {new Item(SULFURAS, -1, 48)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(48, items[0].quality);
+        assertEquals(-1, items[0].sellIn);
+    }
+
+    @Test
+    public void when_updateQuality_given_item_name_is_SULFURAS_and_quality_is_48_and_sell_is_0() {
+        Item[] items = {new Item(SULFURAS, 0, 48)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(48, items[0].quality);
+        assertEquals(0, items[0].sellIn);
+    }
+
 }
