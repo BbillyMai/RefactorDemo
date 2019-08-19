@@ -119,4 +119,59 @@ public class GildedRoseTest {
         assertEquals(50, items[0].quality);
         assertEquals(-1, items[0].sellIn);
     }
+
+    @Test
+    public void when_updateQuality_given_item_name_is_BACKSTAGE_PASSES_and_quality_is_50_and_sell_is_0() {
+        Item[] items = {new Item(BACKSTAGE_PASSES, 0, 50)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(0, items[0].quality);
+        assertEquals(-1, items[0].sellIn);
+    }
+
+    @Test
+    public void when_updateQuality_given_item_name_is_BACKSTAGE_PASSES_and_quality_is_50_and_sell_is_1() {
+        Item[] items = {new Item(BACKSTAGE_PASSES, 1, 50)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, items[0].quality);
+        assertEquals(0, items[0].sellIn);
+    }
+
+    @Test
+    public void when_updateQuality_given_item_name_is_BACKSTAGE_PASSES_and_quality_is_49_and_sell_is_1() {
+        Item[] items = {new Item(BACKSTAGE_PASSES, 1, 49)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, items[0].quality);
+        assertEquals(0, items[0].sellIn);
+    }
+
+    @Test
+    public void when_updateQuality_given_item_name_is_BACKSTAGE_PASSES_and_quality_is_48_and_sell_is_1() {
+        Item[] items = {new Item(BACKSTAGE_PASSES, 1, 48)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, items[0].quality);
+        assertEquals(0, items[0].sellIn);
+    }
+
+    @Test
+    public void when_updateQuality_given_item_name_is_BACKSTAGE_PASSES_and_quality_is_47_and_sell_is_1() {
+        Item[] items = {new Item(BACKSTAGE_PASSES, 1, 47)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, items[0].quality);
+        assertEquals(0, items[0].sellIn);
+    }
 }
